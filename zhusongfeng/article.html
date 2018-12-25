@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>文章详情</title>
+    <link rel="stylesheet" href="css/comment.css">
+    <link rel="stylesheet" href="css/article.css">
+    <script type="text/javascript" src="js/rem.js"></script>
+    <style>
+
+
+
+    </style>
+</head>
+<body>
+
+<div id="app" v-clock  class="mp-frame mp-article" >
+    <!--内容区域-->
+    <div class="mp-article-tpl" >
+        <div class="mp-article-content-container">
+            <div class="mp-article-content">
+
+                <div class="mp-article-content-area">
+
+                    <div class="mp-article-music"  v-if="articleContent.images">
+
+                        <img :src="articleContent.images[0]" alt="">
+
+                    </div>
+
+                    <!--顶部视频 -->
+                    <header class="video-playback" v-if="articleContent.video">
+                        <video controls controlsList="nodownload" preload="auto"
+                               :poster="articleContent.videoImage" x5-video-player-fullscreen="true"
+                               webkit-playsinline="true"
+                               x-webkit-airplay="true"
+                               playsinline="true"
+                               x5-playsinline
+                               id="video-player" class="video-player"
+                               :src="articleContent.video">
+                            您的浏览器不支持 video 标签。
+                        </video>
+
+                    </header>
+
+                    <div class="mp-article-texts group" >
+                        <div class="mp-article-texts-word" >
+                            <div class="mp-title">{{articleContent.title}}</div>
+                            <span class="mp-content" v-html="articleContent.content"></span>
+                            <div class="mp-time">{{articleContent.updatetime}}</div>
+                            <div class="mp-content-list">
+                                <div class="mpm-like"><img src="image/collection-select.png" alt=""> <span class="like-number">{{articleContent.likes}}</span></div>
+
+                               <div class="mpm-like"><img src="image/collection.png" alt=""> <span class="like-number">{{articleContent.shares}}</span></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <div class="print-button"></div>
+        </div>
+    </div>
+    <!--评论和推荐区域-->
+    <div class="mp-article-mains">
+
+        <div class="mp-article-mains-left">
+            <img src="image/1.jpg" alt="" class="mp-article-mains-img">
+            <span class="mp-article-m-title"> kk时看看搜索框可是可是看</span>
+        </div>
+
+        <div class="mp-article-mains-right">
+            sj是卡是卡是可是可是面试时，，是，是融入人人人柔柔弱弱若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若若
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/article.js"></script>
+
+<script>
+//    comment.getCommentList();
+/*$('.mp-article-caption-title').click(function () {
+    window.location.hash = "#comments";
+})*/
+/*$('#comments')[0].scrollIntoView(true);*/
+
+
+</script>
+</html>
